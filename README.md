@@ -10,7 +10,8 @@ FaceDNR is a combination of Face Detection and Face Recognition frameworks. Ther
 
 [![N|Solid](./FaceDNR.svg)](https://www.systemcorp.ai)
 
-Image taken from Wice - Star Fighter (from Magnatron 2.0).
+`Image taken from Wice - Star Fighter (from Magnatron 2.0).
+`Some code has been imported from OpenCV original implementation.
 
 
 
