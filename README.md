@@ -114,8 +114,16 @@ $ Training FaceDNR Model has been finished.
 Colab doesn't support the X Server, and it'll throw error every time you'll execute the command, so use your Laptop/PC to test the model.
 
 After downloading the model, and installing requirements, cd to the project directory, and execute the command:
+
+For Histogram of Oriented Gradients (HOG) Classification
+
 ```sh
-$ python3 facednr.py
+$ python3 facednr.py -m hog
+```
+For CNN
+
+```sh
+$ python3 facednr.py -m cnn
 ```
 
 ### The model will recognize the face in every 2 seconds.

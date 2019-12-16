@@ -11,6 +11,13 @@ import datetime as dt
 import time
 import subprocess
 
+
+ap = argparse.ArgumentParser()
+ap.add_argument("-m", "--method", type=int, default='hog',
+	help="method of detection - CNN or HOG")
+
+
+args = vars(ap.parse_args())
 # Variable for counting frames after face is detected
 facecount = 0
 
@@ -74,8 +81,7 @@ while True:
         # detect the (x, y)-coordinates of the bounding boxes corresponding
         # to each face in the input image, then compute the facial embeddings
         # for each face
-        #print("hr.ai is recognizing faces...")
-        boxes = face_recognition.face_locations(rgb, model="hog")
+        boxes = face_recognition.face_locations(rgb, model=args['method'])
         encodings = face_recognition.face_encodings(rgb, boxes)
 
         # initialize the list of names for each face detected
@@ -85,8 +91,6 @@ while True:
         for encoding in encodings:
             # attempt to match each face in the input image to our known
             # encodings
-           # matches = face_recognition.compare_faces(data["encodings"],
-            #    encoding)
             matches = face_recognition.compare_faces(data["encodings"],
                 encoding)
             name = "Unknown"
@@ -131,8 +135,6 @@ while True:
         print("Recognition took ", end-start, "seconds")
 
         facecount = 0
-        #for i in range(len(names)):
-	    #    subprocess.run("say Hey " + str(names[i]) , shell=True)
 
     if anterior != len(faces):
         anterior = len(faces)
