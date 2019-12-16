@@ -115,7 +115,7 @@ Colab doesn't support the X Server, and it'll throw error every time you'll exec
 
 After downloading the model, and installing requirements, cd to the project directory, and execute the command:
 
-For Histogram of Oriented Gradients (HOG) Classification
+For Histogram of Oriented Gradients (HOG) 
 
 ```sh
 $ python3 facednr.py -m hog
